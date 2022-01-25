@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const { v4: uuidv4 } = require('uuid');
+
 const {
     readFromFile,
     readAndAppend,
@@ -22,12 +22,12 @@ notes.get('/:title', (req, res) => {
         });
 });
 
-notes.delete('/:note_id', (req, res) => {
-    const noteId = req.params.note_id;
+notes.delete('/:title', (req, res) => {
+    const noteId = req.params.title;
     readFromFile('./db/db.json')
       .then((data) => JSON.parse(data))
       .then((json) => {
-        const result = json.filter((note) => note.note_id !== noteId);
+        const result = json.filter((note) => note.title !== noteId);
        
         writeToFile('./db/db.json', result);
   
@@ -44,7 +44,6 @@ notes.post('/', (req, res) => {
       const newNote = {
         title,
         text,
-        note_id: uuidv4(),
       };
   
       readAndAppend(newNote, './db/db.json');
