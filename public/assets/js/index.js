@@ -1,3 +1,5 @@
+const { uuid } = require("uuidv4");
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
