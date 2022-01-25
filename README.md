@@ -20,7 +20,7 @@ Table of Contents
 ## Description
     This note taker project allows the user to interact on a public website and create and view notes.
 ## Usage
-    Go to this link and add any notes that you want to add.
+[follow this link and add any notes that you want to add.](https://shielded-escarpment-21478.herokuapp.com/notes) 
 ## Built With
     HTML,CSS,Javscript
 ## Questions
